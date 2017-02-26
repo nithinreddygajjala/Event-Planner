@@ -1,0 +1,46 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#/index2">Event Planner</a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav ">
+
+      <li class="nav-item  ">
+    <li><a class='nav-link' href="#create"><h4>Create Event</h4></a></li>
+      </li>
+      <li class="nav-item  ">
+      <li><a class='nav-link' ng-click='createdevent()' href="#dashboard"><h4>Dashboard</h4></a></li>
+      </li>
+      <li class="nav-item  ">
+        <li><a class='nav-link' ng-click='logoff()' href="#/"><h4><span class='glyphicon glyphicon-log-out'>  Logout {{username.username}}</span></h4></a></li>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<br>
+<title>Dashboard</title>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>
+    </div>
+  <div class='col-md-5'>
+    <h4>Interested Events </h4>
+    <div ng-repeat='t in update[0].events'><hr>{{t}} <button ng-click='deletersvp(t)' class='btn btn-default btn-danger btn-sm'>Cancel Rsvp</button></div>
+
+</div>
+<div class='col-md-5'>
+
+
+  <h4>Created Events </h4>
+  <div ng-repeat='k in created'>
+    <hr>
+  {{k.eventname}} <button class='btn btn-default btn-danger btn-sm' ng-click='deleteevent(k._id)'>delete </button>
+
+</div>
+</div>
+</div>
+  </div>

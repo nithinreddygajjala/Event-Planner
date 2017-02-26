@@ -1,0 +1,64 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#/index2">Event Planner</a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav ">
+
+      <li class="nav-item  ">
+    <li><a class='nav-link' href="#create"><h4>Create Event</h4></a></li>
+      </li>
+      <li class="nav-item  ">
+      <li><a class='nav-link' ng-click='createdevent()' href="#dashboard"><h4>Dashboard</h4></a></li>
+      </li>
+      <li class="nav-item  ">
+        <li><a class='nav-link' ng-click='logoff()' href="#/"><h4><span class='glyphicon glyphicon-log-out'> Logout {{username.username}}</span></h4></li></a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+<br>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-5'>
+    </div>
+    <div class='col-md-3'>
+      <h3> Create Meetup</h3>
+    </br>
+      <form action="adddata" method='post'>
+        <div class='form-group'>
+          <input type='text' name='eventname'class='form-control' ng-required='true' placeholder=' Enter the event name '>
+        </br>
+        <input type='text' name='eventowner'class='form-control' ng-required='true' placeholder=' Hosted by '>
+      </br>
+            <input type='text' name='place' class='form-control' ng-required='true' placeholder=' Enter the event place '>
+          </br>
+              <input type='text' name='startdate' datepicker ng-model="value1" class='form-control' ng-required='true' placeholder=' select start date '>
+            </br>
+            <input type='text' name='enddate' datepicker ng-model="value2" class='form-control'  placeholder=' select end date '>
+          </br>
+          <input type='text' name='time' id='time'  class='form-control'  placeholder=' select the time '>
+        </br>
+              <button type='submit' class='btn btn-primary'>Add</button>
+        </div>
+      </form>
+
+    </div>
+    <div class='col-md-4'>
+    </div>
+  </div>
+</div>
+<script>
+$('#time').timepicker({
+
+    interval: 30,
+    minTime: '6:00 am',
+    maxTime: '11:59 pm',
+
+
+});
+</script>

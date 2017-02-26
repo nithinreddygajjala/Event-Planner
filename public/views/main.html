@@ -1,0 +1,142 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#/">Event Planner</a>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav ">
+
+      <li class="nav-item  ">
+      <a class='nav-link' href="#signin"><h4><span class='glyphicon glyphicon-user'>  Login</span></h4></a>
+      </li>
+      <li class="nav-item  ">
+        <li><a class='nav-link' href="#signup"><h4><span class='glyphicon glyphicon-log-in'> SignUp</span></h4></a></li>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+
+
+  <br>
+  <br>
+
+      <div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-8 ' >
+<input type='text' class='form-control ' ng-model='search' placeholder='Search the Events'>
+</br>
+<div style=" height:500px;overflow-y: scroll;"  >
+<div ng-repeat="item in buffer|orderBy: '-startdate'|filter:search" >
+  <div class='row'>
+    <div class='col-md-5'>
+    </div>
+    <div class='col-md-5' >
+<h6 >{{item.startdate.substring(0, 10).split('-').reverse().join('-')}}   </h6><h7>(dd-mm-yy)</h7>
+</div>
+
+<div class='col-md-4'>
+</div>
+</div>
+
+<div class='card' style=''>
+<div class='card-block'>
+<div class='container'>
+
+<div class='row'>
+
+  <div class='col-md-4'>
+<h5><b><a  href='#detailed' ng-click='details(item.eventname,item.location,item.startdate,item._id)'>  {{item.eventname}}</a></b></h5>
+  </div>
+  <div class='col-md-4'>
+
+</div>
+  <div class='col-md-4'>
+
+  </div>
+</div>
+<br>
+<div class='row'>
+
+<div class='col-md-5'>
+    <h6 class='card-text'> Place : {{item.location}}</h6>
+</div>
+
+<div class='col-md-3'>
+
+  <a ng-click='details(item.eventname,item.location,item.startdate,item._id)' href='#rsvp' >RSVP</a>
+</div>
+
+
+
+<div class='col-md-4'>
+  <h6>attendance: {{item.attendance}}</h6>
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+
+</div>
+  </div>
+  <br>
+</div>
+</div>
+<!--<div ng-repeat="item in buffer|orderBy:'-date'|filter:search">
+  <div class='row'>
+    <div class='col-md-5'>
+    </div>
+    <div class='col-md-5'>
+  <h4>{{item.date.toDateString()}}</h4>
+</div>
+<div class='col-md-4'>
+</div>
+</div>
+    <div ng-repeat='it in item.data' >
+  <div class='well well-sm'>
+
+    <h5><b><a ng-click='details(item.eventname,item.location,item.startdate)' href='#detailed'> Name :{{it.name}}</a></b><h5>
+  </br>
+    <h5> Place :{{it.place}}<h5><a href='#rsvp' ng-click='details(it,item.date)'>RSVP</a> </br>
+
+
+    </div>
+  </div>
+ </div>
+-->
+</div>
+
+<div class='col-sm-4'>
+           <div class="form-group">
+               <input type="text" class='form-control '  id='id1' datepicker ng-model="datevalue" ng-change='change(datevalue)' placeholder='select the date' autofocus/>
+
+           </div>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <br>
+           <h4>Made using Angular.js , Express.js , Node.js , Mongodb , Bootstrap and Google Maps Api</h4>
+
+       </div>
+
+</div>
+</div>

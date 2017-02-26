@@ -1,0 +1,82 @@
+
+<html>
+<head>
+  <title>Event Planner</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.css">
+</head>
+<body ng-app='ng-app'>
+  <div ng-controller='control1'>
+  <header >
+
+    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#/index2">Event Planner</a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+
+          <li class="nav-item  ">
+        <li><a href="#create"><h4>Create Meetup</h4></a></li>
+          </li>
+          <li class="nav-item  ">
+          <li><a ng-click='createdevent()' href="#dashboard"><h4>Dashboard</h4></a></li>
+          </li>
+          <li class="nav-item  ">
+            <li><a  ng-click='logoff()' href="#/"><h4><span class='glyphicon glyphicon-log-out'> Logout</span></h4></a></li>
+          </li>
+
+        </ul>
+
+      </div>
+    </nav>
+
+
+
+
+
+
+  </header>
+
+
+  <ng-view></ng-view>
+</div>
+
+  <footer >
+
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">&copy;  Nithin Reddy Gajjala</a>
+      </div>
+
+    </div>
+  </nav>
+
+  </footer>
+
+
+
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-cookies.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-timepicker/1.10.0/jquery.timepicker.js"></script>
+
+  <script src='/angular/app.js'></script>
+
+
+
+</body>
+</html>

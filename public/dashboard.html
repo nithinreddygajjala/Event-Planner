@@ -1,0 +1,41 @@
+<nav class='navbar navbar-default '>
+  <div class='container-fluid'>
+    <div class='navbar-header'>
+      <div class='navbar-brand'><a href='#/'><h4>Event Planner</h4></a></div>
+  </div>
+  <ul class='nav navbar-nav'>
+<li><a href="#create"><h4>Create Meetup</h4></a></li>
+</ul>
+<ul class='nav navbar-nav'>
+<li><a ng-click='createdevent()' href="#dashboard"><h4>Dashboard</h4></a></li>
+</ul>
+<ul class='nav navbar-nav navbar-right'>
+
+  <li><a  ng-click='logoff()' href="#/"><h4><span class='glyphicon glyphicon-log-out'> Logout</span></h4></a></li>
+
+
+</ul>
+</div>
+</nav>
+<title>Dashboard</title>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-2'>
+    </div>
+  <div class='col-md-5'>
+    <h4>Interested Events </h4>
+    <div ng-repeat='t in update[0].events'><hr>{{t}}</div>
+
+</div>
+<div class='col-md-5'>
+
+
+  <h4>Created Events </h4>
+  <div ng-repeat='k in created'>
+    <hr>
+  {{k.eventname}}   <button class='btn btn-default' ng-click='deleteevent(k._id)'>delete </button>
+
+</div>
+</div>
+</div>
+  </div>
