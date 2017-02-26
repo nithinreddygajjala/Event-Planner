@@ -260,10 +260,13 @@ $scope.change=function(temp){
 $scope.buffer=[];
 
 
+$scope.buffer=[];
 
+
+console.log(temp.split('-').reverse().join('-'));
     for(var i=0;i<$scope.test.length;i++){
-      //console.log($scope.test[i].startdate.substring(0,10));
-      if(new Date(temp).toISOString()<=$scope.test[i].startdate){
+      console.log($scope.test[i].startdate.substring(0,10));
+      if(new Date(temp.split('-').reverse().join('-')).toISOString()<=$scope.test[i].startdate){
 
 $scope.buffer.push($scope.test[i]);
 console.log($scope.buffer);
