@@ -92,7 +92,13 @@ module.service('savedata',function($cookieStore){
 
   },
   this.getDate=function(){
-    return $cookieStore.get('date');
+    var k= $cookieStore.get('date');
+    if(k==undefined||k==null){
+      return '';
+    }
+    else {
+      return k;
+    }
 
   },
   this.delete=function(){
