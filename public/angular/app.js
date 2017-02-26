@@ -13,33 +13,6 @@ module.factory('getstatus', function($http) {
 });
 
 
-module.directive('mapper',function($http){
-  return {
-         template : "",
-         link: function(scope, element, attrs) {
-
-           $http.get('https://maps.googleapis.com/maps/api/geocode/json?address='+scope.place).success(function(data){
-             console.log(data.results[0].geometry.location);
-             console.log(scope.buffer);
-             var mapOptions = {
-                 center:new google.maps.LatLng(data.results[0].geometry.location.lat,data.results[0].geometry.location.lng),
-                 zoom:7
-              }
-
-              var map = new google.maps.Map(document.getElementById("sample"),mapOptions);
-
-              var marker = new google.maps.Marker({
-                 position: new google.maps.LatLng(data.results[0].geometry.location.lat, data.results[0].geometry.location.lng),
-                 map: map,
-              });
-           });
-
-
-        }
-     };
-});
-
-
 
 
 
@@ -92,13 +65,7 @@ module.service('savedata',function($cookieStore){
 
   },
   this.getDate=function(){
-    var k= $cookieStore.get('date');
-    if(k==undefined||k==null){
-      return '';
-    }
-    else {
-      return k;
-    }
+    return $cookieStore.get('date');
 
   },
   this.delete=function(){
@@ -114,13 +81,10 @@ $scope.logoff=function(){
   logoutuser.logout1();
 console.log('user logged out');
 };
-console.log('2');
 $scope.name=savedata.getName();
 $scope.place=savedata.getPlace();
-$scope.date=savedata.getDate().substring(0, 10).split('-').reverse().join('-');
+$scope.date=savedata.getDate();
 $scope.id=savedata.getId();
-$scope.x;
-$scope.y;
   $scope.details=function(param0,param1,param2,param3){
     savedata.delete();
     console.log(param3);
@@ -128,14 +92,8 @@ $scope.y;
     $scope.name=savedata.getName();
 $scope.place=savedata.getPlace();
 $scope.id=savedata.getId();
-console.log('reached');
-place=$scope.place;
 
   }
-
-  x=19.373341;
-  y=78.662109;
-  var place;
 $scope.test;
   $scope.message='hello world';
   $http.get("/getdata")
@@ -260,9 +218,6 @@ $scope.change=function(temp){
 $scope.buffer=[];
 
 
-$scope.buffer=[];
-
-
 console.log(temp.split('-').reverse().join('-'));
     for(var i=0;i<$scope.test.length;i++){
       console.log($scope.test[i].startdate.substring(0,10));
@@ -361,16 +316,6 @@ module.directive('datepicker',function(){
                 dateFormat: "dd-mm-yy",
 
             });
-
-
-
-element.focus();
-
-element.onblur = function () {
-    setTimeout(function () {
-        element.focus();
-    });
-};
         }
         return {
             require: 'ngModel',
